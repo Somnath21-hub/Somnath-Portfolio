@@ -145,7 +145,7 @@ export const portfolioData = {
     title: "Tea Leaf Disease Detection using YOLOv8-CBAM",
     publisher: "IEEE, 2025",
     description: "Co-authored and published research paper detailing computer vision-based disease classification in agricultural crops using YOLOv8 with attention modules.",
-    link: "#"
+    link: "https://ieeexplore.ieee.org/document/11364642"
   },
   
   communities: [
