@@ -114,14 +114,13 @@ export default function Header() {
         {/* Logo */}
         <div 
           onClick={() => scrollToSection('about')} 
-          className="flex items-center gap-2 cursor-pointer opacity-90 group"
+          className="flex items-center cursor-pointer opacity-90 group"
         >
-          <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white font-bold group-hover:scale-105 transition-transform duration-200">
-            {firstName[0]}
-          </div>
-          <span className="font-bold text-base tracking-tight text-foreground hidden sm:block">
-            {firstName}<span className="text-primary">.</span>
-          </span>
+          <img 
+            src="/logo.png" 
+            alt="Somnath" 
+            className="h-8 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
+          />
         </div>
 
         {/* Desktop Navigation */}
