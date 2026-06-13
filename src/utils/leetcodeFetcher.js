@@ -34,6 +34,7 @@ export async function fetchLeetCodeStats(username) {
         mediumTotal: data.totalMedium || 150,
         hardSolved: data.hardSolved || 0,
         hardTotal: data.totalHard || 100,
+        submissionCalendar: data.submissionCalendar || {},
       };
       
       sessionStorage.setItem(cacheKey, JSON.stringify(result));
@@ -60,6 +61,7 @@ export async function fetchLeetCodeStats(username) {
         mediumTotal: data.totalMedium || 150,
         hardSolved: data.hardSolved || 0,
         hardTotal: data.totalHard || 100,
+        submissionCalendar: data.submissionCalendar || {},
       };
       
       sessionStorage.setItem(cacheKey, JSON.stringify(result));

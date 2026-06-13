@@ -64,39 +64,54 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
-
-      // Section highlighting logic
-      const scrollPosition = window.scrollY + 120;
-      for (const item of navItems) {
-        const element = document.getElementById(item.id);
-        if (element) {
-          const top = element.offsetTop;
-          const height = element.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(item.id);
-          }
-        }
-      }
     };
-
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Accurate active-section tracking via IntersectionObserver
+  useEffect(() => {
+    const ratioMap = {};
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          ratioMap[entry.target.id] = entry.intersectionRatio;
+        });
+        // Pick the section with the highest visible ratio
+        const best = Object.entries(ratioMap).sort((a, b) => b[1] - a[1])[0];
+        if (best && best[1] > 0) {
+          setActiveSection(best[0]);
+        }
+      },
+      {
+        rootMargin: '-10% 0px -55% 0px',
+        threshold: [0, 0.1, 0.25, 0.5, 0.75, 1],
+      }
+    );
+
+    navItems.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) {
+        ratioMap[id] = 0;
+        observer.observe(el);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
 
   const scrollToSection = (id) => {
     setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
-      const offset = 80; // height of header
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth'
-      });
+      // Small delay to let mobile menu close first (avoids layout jump)
+      setTimeout(() => {
+        const headerH = 72;
+        const top = element.getBoundingClientRect().top + window.scrollY - headerH;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }, 50);
     }
   };
 
