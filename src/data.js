@@ -71,6 +71,20 @@ export const portfolioData = {
   
   projects: [
     {
+      title: "Asansol Trekkers Club",
+      description: "Official web platform for the Asansol Trekkers Club, celebrating 25 years of adventure sports and high-altitude expeditions. Built with React and Vite, featuring detailed showcases of popular destinations, upcoming training camps/eco-cleanup events, a media gallery, and integrated member testimonial slider.",
+      github: "https://github.com/Somnath21-hub/Asansol-Trekkers",
+      demo: "https://asansoltrekkers.xyz/",
+      tags: ["React.js", "Vite", "Tailwind CSS", "Responsive Design"]
+    },
+    {
+      title: "CalcuttaHacks 1.0",
+      description: "Official hackathon portal for CalcuttaHacks 1.0 — a 24-hour flagship hackathon by Apex Circle celebrating innovation, heritage, and the vibrant spirit of Kolkata. Features event schedule, problem tracks, sponsor showcase, prize pool display, and live registration — built for 500+ participants.",
+      github: "https://github.com/Somnath21-hub/Calcutta-Hacks1.0",
+      demo: "https://calcuttahacks.xyz/",
+      tags: ["React.js", "Vite", "Tailwind CSS", "GSAP", "Service Worker"]
+    },
+    {
       title: "InterviewIQ Buddy",
       description: "AI-powered mock interview SaaS platform utilizing LLMs for resume-based interview Q&A and instant feedback. Deployed with Firebase Authentication, credit-based user quota systems, and Razorpay payment gateway integration.",
       github: "https://github.com/Somnath21-hub/interview-iq-buddy",
