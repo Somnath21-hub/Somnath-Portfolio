@@ -119,7 +119,9 @@ export default function Header() {
           <img 
             src="/logo.png" 
             alt="Somnath" 
-            className="h-8 w-auto object-contain group-hover:scale-105 transition-transform duration-200"
+            className={`w-auto object-contain group-hover:scale-105 transition-all duration-500 ${
+              isScrolled ? 'h-6' : 'h-8'
+            }`}
           />
         </div>
 

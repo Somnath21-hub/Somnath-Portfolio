@@ -18,7 +18,7 @@ export default function Loader({ onComplete }) {
     if (index === greetings.length) {
       const timeout = setTimeout(() => {
         onComplete();
-      }, 300); // Allow fade out to finish
+      }, 200); // Allow fade out to finish (faster)
       return () => clearTimeout(timeout);
     }
 
@@ -28,10 +28,10 @@ export default function Loader({ onComplete }) {
       const switchTimeout = setTimeout(() => {
         setIndex(prev => prev + 1);
         setFade('in');
-      }, 150); // delay during switch
+      }, 70); // delay during switch
       
       return () => clearTimeout(switchTimeout);
-    }, 350); // display duration per greeting
+    }, 180); // display duration per greeting
 
     return () => clearTimeout(displayTimeout);
   }, [index, onComplete]);

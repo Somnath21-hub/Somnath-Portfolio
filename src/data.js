@@ -9,7 +9,7 @@ export const portfolioData = {
     title: "Somnath Mukherjee | Full Stack Developer & AI/ML Specialist",
     roles: ["Full Stack Developer", "AI/ML Specialist", "MERN Developer"],
     workExpYears: "1.5+",
-    hackathonsCount: "15+",
+    hackathonsCount: "50+",
     leetcodeCount: "150+",
     baseLocation: "Kolkata, India",
     email: "somnath10235@gmail.com",
@@ -18,7 +18,7 @@ export const portfolioData = {
     leetcode: "https://leetcode.com/u/Somnath21/",
     resumeLink: "#", // Add google drive link to your resume
     bioLine1: "A Full Stack Developer and AI/ML Engineer skilled in MERN, LLMs, and scalable SaaS systems; experienced in building and deploying production-ready applications.",
-    bioLine2: "Passionate about competitive programming, hackathons, and developing assistive technology and smart SaaS solutions. Undergrad at Techno International New Town. 🚀",
+    bioLine2: "Passionate about competitive programming, hackathons, and developing assistive technology and smart SaaS solutions. Undergrad at Techno International New Town.",
   },
   
   experiences: [
@@ -74,7 +74,7 @@ export const portfolioData = {
       title: "InterviewIQ Buddy",
       description: "AI-powered mock interview SaaS platform utilizing LLMs for resume-based interview Q&A and instant feedback. Deployed with Firebase Authentication, credit-based user quota systems, and Razorpay payment gateway integration.",
       github: "https://github.com/Somnath21-hub/interview-iq-buddy",
-      demo: "#",
+      demo: "https://interview-buddy-clnt.onrender.com/",
       tags: ["React.js", "Node.js", "Express.js", "MongoDB", "LLMs", "Firebase", "Razorpay"]
     },
     {
@@ -90,6 +90,13 @@ export const portfolioData = {
       github: "https://github.com/Somnath21-hub/gazeboard",
       demo: "#",
       tags: ["Python", "OpenCV", "MediaPipe", "PyAutoGUI", "Speech Recognition"]
+    },
+    {
+      title: "Apex Circle Website 2k26",
+      description: "Official landing page and portal for Apex Circle built with React, Vite, and Tailwind CSS. Features smooth scrolling animations using GSAP & Lenis, and interactive AI integrations powered by the Google Gemini API.",
+      github: "https://github.com/Somnath21-hub/Apex-Circle-Website2k26",
+      demo: "https://apex-circle-website2k26.vercel.app/",
+      tags: ["React.js", "Vite", "Tailwind CSS", "GSAP", "Lenis", "Gemini API"]
     }
   ],
   
@@ -185,7 +192,7 @@ export const portfolioData = {
   },
   
   stats: [
-    { value: "15+", label: "Hackathons Participated" },
+    { value: "50+", label: "Events Participated" },
     { value: "500+", label: "Event Attendees" },
     { value: "Kolkata", label: "Base Location" }
   ]

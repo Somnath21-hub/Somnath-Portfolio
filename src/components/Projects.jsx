@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Code2, ExternalLink, Sparkles, Terminal } from 'lucide-react';
+import { Code2, ExternalLink, Sparkles, Terminal, Globe } from 'lucide-react';
 import { portfolioData } from '../data';
 import { fetchLeetCodeStats } from '../utils/leetcodeFetcher';
 
@@ -157,22 +157,22 @@ export default function Projects() {
               <div className="glass-card p-6 flex flex-col h-full card-hover border border-primary/15 min-h-[200px]">
                 
                 {/* Header */}
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-lg bg-primary/25 border border-primary/30 flex items-center justify-center">
+                <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
+                  <div className="flex items-start gap-2 min-w-0">
+                    <div className="w-8 h-8 rounded-lg bg-primary/25 border border-primary/30 flex items-center justify-center shrink-0 mt-0.5">
                       <Terminal size={14} className="text-accent" />
                     </div>
-                    <h3 className="text-lg font-bold text-foreground hover:text-accent transition-colors">
+                    <h3 className="text-base sm:text-lg font-bold text-foreground hover:text-accent transition-colors leading-tight">
                       {proj.title}
                     </h3>
                   </div>
                   
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-2.5 shrink-0 self-end sm:self-auto">
                     <a 
                       href={proj.github} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-muted-foreground hover:text-accent transition-colors"
+                      className="text-muted-foreground hover:text-accent transition-colors flex items-center justify-center"
                       aria-label="GitHub Link"
                     >
                       <svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
@@ -185,10 +185,15 @@ export default function Projects() {
                         href={proj.demo} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-accent transition-colors"
+                        className="flex items-center gap-1.5 text-[10px] font-bold text-rose-400 hover:text-rose-300 bg-rose-500/10 border border-rose-500/20 hover:border-rose-400/40 px-2.5 py-1 rounded-full transition-all duration-300 shadow-[0_0_12px_rgba(244,63,94,0.15)] hover:shadow-[0_0_15px_rgba(244,63,94,0.3)] select-none cursor-pointer"
                         aria-label="Live Demo Link"
                       >
-                        <ExternalLink size={18} />
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-rose-500"></span>
+                        </span>
+                        <Globe size={11} className="text-rose-400" />
+                        <span>Live View</span>
                       </a>
                     )}
                   </div>
